@@ -1,5 +1,5 @@
 // Attach an event for when the user submits the form
-$('form').on('submit', function(event) {
+$('#contact-form').on('submit', function(event) {
 
     // Prevent the page from reloading
     event.preventDefault();
