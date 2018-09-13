@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 
 # Create your views here.
 def home_view(request, *args, **kwargs):
     #return HttpResponse('<h1> Hello World<h1>')
+
     return render(request, 'index.html', {})
 
 def message_view(request):
@@ -13,5 +14,7 @@ def message_view(request):
     user_message = request.POST.get("message")
     print(user_message)
 
-    return HttpResponseRedirect(url+user_name+'\n'+user_email+'\n'+user_message) #브라우저 창 이동이 됨.. 이동 안하고 처리???
+    # return redirect('/')
+    # return HttpResponseRedirect(url+user_name+'\n'+user_email+'\n'+user_message) #브라우저 창 이동이 됨.. 이동 안하고 처리???
     # return render(request, 'message_view.html', {})
+    return render(request, 'message_view.html', {})
